@@ -42,6 +42,9 @@ Designed for **OpenShift Agent-Based Installation** with support for:
 Install dependencies:
 
   ```bash
+  python -m venv myenv
+  myenv\Scripts\activate.bat
+
   pip install -r requirements.txt
   ```
 
@@ -52,7 +55,7 @@ Install dependencies:
 Run generator with environment JSON:
 
 ```bash
-python render_yaml.py cluster-datasource/dev.json
+python render_yaml.py cluster-datasource/pde.json
 ```
 
 Output:
