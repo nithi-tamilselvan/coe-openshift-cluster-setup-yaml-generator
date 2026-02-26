@@ -1,69 +1,4 @@
-# OpenShift YAML Generator
-
-Automates generation of:
-
-- `install-config.yaml`
-- `agent-config.yaml`
-
-from cluster-level-environment-specific JSON inputs.
-
-Designed for **OpenShift Agent-Based Installation** with support for:
-
-✅ Dual-stack (IPv4 + IPv6)  
-✅ Multiple environments (DEV / QA / PROD)  
-✅ Strong validations  
-
----
-
-## 📂 Project Structure
-
-  dellcoe-openshift-yaml-generator/
-    │
-    ├── cluster-datasource/
-    │ ├── pde.json
-    │ └── ncw.json
-    │
-    ├── jinja2-templates/
-    │ ├── install-config.yaml.j2
-    │ └── agent-config.yaml.j2
-    │
-    ├── generated-yaml-output/
-    │ └── (auto-generated)
-    │
-    ├── render_yaml.py
-    ├── validators.py
-    ├── requirements.txt
-    └── README.md
-
----
-
-## ⚙️ Requirements
-
-Install dependencies:
-
-  ```bash
-  pip install -r requirements.txt
-  ```
-
----
-
-## 🚀 Usage
-
-Run generator with environment JSON:
-
-   ```bash
-  python render_yaml.py cluster-datasource/dev.json
-  ```
-
-Output:
-  generated-yaml-output/datacenter-install-config.yaml
-  generated-yaml-output/datacenter-agent-config.yaml
-
----
-
-##  Input JSON Format
-
-    {
+{
     "cluster": {
         "name": "ctc-pde-hub-c1",
         "baseDomain": "corp.chartercom.com"
@@ -176,18 +111,3 @@ Output:
         }
     ]
 }
-
----
-
-## ✅ Validations Performed
-
-The generator validates before rendering YAML:
-
-    ✔ Duplicate MACs across ALL nodes
-    ✔ Duplicate IPv4 (mgmt + storage)
-    ✔ Duplicate IPv6
-    ✔ Invalid MAC format
-    ✔ Invalid IPv4/IPv6 format
-    ✔ CIDR overlaps
-    ✔ VIP outside subnet
-    ✔ Even master count
