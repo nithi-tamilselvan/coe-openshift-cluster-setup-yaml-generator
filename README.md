@@ -117,6 +117,14 @@ generated-yaml-output\pde-install-config.yaml
             "storageIPs": {
                 "503": "10.3.121.13",
                 "504": "10.3.123.13"
+            },
+            "rootDeviceHints": {
+                "deviceName": "/dev/sda",
+                "serialNumber": "",
+                "vendor": "Dell",
+                "minSizeGigabytes": "",
+                "wwn": "",
+                "rotational": false
             }
         },
         {
@@ -130,6 +138,14 @@ generated-yaml-output\pde-install-config.yaml
             "storageIPs": {
                 "503": "10.3.121.14",
                 "504": "10.3.123.14"
+            },
+            "rootDeviceHints": {
+                "deviceName": "/dev/sda",
+                "serialNumber": "",
+                "vendor": "Dell",
+                "minSizeGigabytes": "",
+                "wwn": "",
+                "rotational": false
             }       
         },
         {
@@ -143,6 +159,14 @@ generated-yaml-output\pde-install-config.yaml
             "storageIPs": {
                 "503": "10.3.121.15",
                 "504": "10.3.123.15"
+            },
+            "rootDeviceHints": {
+                "deviceName": "/dev/sda",
+                "serialNumber": "",
+                "vendor": "Dell",
+                "minSizeGigabytes": "",
+                "wwn": "",
+                "rotational": false
             }
         },
         {
@@ -156,6 +180,14 @@ generated-yaml-output\pde-install-config.yaml
             "storageIPs": {
                 "503": "10.3.121.16",
                 "504": "10.3.123.16"
+            },
+            "rootDeviceHints": {
+                "deviceName": "/dev/sda",
+                "serialNumber": "",
+                "vendor": "Dell",
+                "minSizeGigabytes": "",
+                "wwn": "",
+                "rotational": false
             }
         },
         {
@@ -169,6 +201,14 @@ generated-yaml-output\pde-install-config.yaml
             "storageIPs": {
                 "503": "10.3.121.17",
                 "504": "10.3.123.17"
+            },
+            "rootDeviceHints": {
+                "deviceName": "/dev/sda",
+                "serialNumber": "",
+                "vendor": "Dell",
+                "minSizeGigabytes": "",
+                "wwn": "",
+                "rotational": false
             }
         },
         {
@@ -182,6 +222,14 @@ generated-yaml-output\pde-install-config.yaml
             "storageIPs": {
                 "503": "10.3.121.18",
                 "504": "10.3.123.18"
+            },
+            "rootDeviceHints": {
+                "deviceName": "/dev/sda",
+                "serialNumber": "",
+                "vendor": "Dell",
+                "minSizeGigabytes": "",
+                "wwn": "",
+                "rotational": false
             }
         }
     ]
