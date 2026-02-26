@@ -17,23 +17,23 @@ Designed for **OpenShift Agent-Based Installation** with support for:
 
 ## 📂 Project Structure
 
-  dellcoe-openshift-yaml-generator/
-    │
-    ├── cluster-datasource/
-    │ ├── pde.json
-    │ └── ncw.json
-    │
-    ├── jinja2-templates/
-    │ ├── install-config.yaml.j2
-    │ └── agent-config.yaml.j2
-    │
-    ├── generated-yaml-output/
-    │ └── (auto-generated)
-    │
-    ├── render_yaml.py
-    ├── validators.py
-    ├── requirements.txt
-    └── README.md
+    dellcoe-openshift-yaml-generator/
+        │
+        ├── cluster-datasource/
+        │ ├── pde.json
+        │ └── ncw.json
+        │
+        ├── jinja2-templates/
+        │ ├── install-config.yaml.j2
+        │ └── agent-config.yaml.j2
+        │
+        ├── generated-yaml-output/
+        │ └── (auto-generated)
+        │
+        ├── render_yaml.py
+        ├── validators.py
+        ├── requirements.txt
+        └── README.md
 
 ---
 
@@ -51,17 +51,24 @@ Install dependencies:
 
 Run generator with environment JSON:
 
-   ```bash
-  python render_yaml.py cluster-datasource/dev.json
-  ```
+```bash
+python render_yaml.py cluster-datasource/dev.json
+```
 
 Output:
-  generated-yaml-output/datacenter-install-config.yaml
-  generated-yaml-output/datacenter-agent-config.yaml
+    
+```bash
+generated-yaml-output/datacenter-install-config.yaml
+generated-yaml-output/datacenter-agent-config.yaml
+
+Example :
+generated-yaml-output\pde-agent-config.yaml
+generated-yaml-output\pde-install-config.yaml
+```
 
 ---
 
-##  Input JSON Format
+##  Input JSON Format - cluster-datasource\pde.json
 
     {
     "cluster": {
