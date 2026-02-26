@@ -8,7 +8,7 @@
 # NTP sources, and VLAN configurations.
 # ------------------------------------------------------------
 
-apiVersion: v1alpha1
+apiVersion: v1beta1
 kind: AgentConfig
 metadata:
   name: {{ cluster.name }}-agent-config
@@ -30,6 +30,13 @@ hosts:
   # ================================
   - hostname: {{ node.hostname }}
     role: {{ node.role }}
+    rootDeviceHints:
+      deviceName: {{ node.rootDeviceHints.deviceName }}
+      serialNumber : {{ node.rootDeviceHints.serialNumber }}
+      vendor: {{ node.rootDeviceHints.vendor }}
+      minSizeGigabytes : {{ node.rootDeviceHints.minSizeGigabytes }}
+      wwn : {{ node.rootDeviceHints.wwn }}
+      rotational : {{ node.rootDeviceHints.rotational }}
     interfaces:
       - name: eno8303   # Physical interface used for all networking
         macAddress: {{ node.mac }} # Unique hardware identifier for the node, used for network configuration and host identification.

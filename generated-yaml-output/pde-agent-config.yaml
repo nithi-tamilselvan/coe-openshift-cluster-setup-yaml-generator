@@ -8,7 +8,7 @@
 # NTP sources, and VLAN configurations.
 # ------------------------------------------------------------
 
-apiVersion: v1alpha1
+apiVersion: v1beta1
 kind: AgentConfig
 metadata:
   name: ctc-pde-hub-c1-agent-config
@@ -29,6 +29,13 @@ hosts:
   # ================================
   - hostname: CTCLRDAZ01HC001
     role: master
+    rootDeviceHints:
+      deviceName: /dev/sda
+      serialNumber : 
+      vendor: Dell
+      minSizeGigabytes : 
+      wwn : 
+      rotational : False
     interfaces:
       - name: eno8303   # Physical interface used for all networking
         macAddress: AA:BB:CC:DD:EE:01 # Unique hardware identifier for the node, used for network configuration and host identification.
@@ -132,6 +139,13 @@ hosts:
   # ================================
   - hostname: CTCLRDAZ01HC002
     role: master
+    rootDeviceHints:
+      deviceName: /dev/sda
+      serialNumber : 
+      vendor: Dell
+      minSizeGigabytes : 
+      wwn : 
+      rotational : False
     interfaces:
       - name: eno8303   # Physical interface used for all networking
         macAddress: AA:BB:CC:DD:EE:02 # Unique hardware identifier for the node, used for network configuration and host identification.
@@ -235,6 +249,13 @@ hosts:
   # ================================
   - hostname: CTCLRDAZ01HC003
     role: master
+    rootDeviceHints:
+      deviceName: /dev/sda
+      serialNumber : 
+      vendor: Dell
+      minSizeGigabytes : 
+      wwn : 
+      rotational : False
     interfaces:
       - name: eno8303   # Physical interface used for all networking
         macAddress: AA:BB:CC:DD:EE:03 # Unique hardware identifier for the node, used for network configuration and host identification.
@@ -338,6 +359,13 @@ hosts:
   # ================================
   - hostname: CTCLRDAZ01HI001
     role: infra
+    rootDeviceHints:
+      deviceName: /dev/sda
+      serialNumber : 
+      vendor: Dell
+      minSizeGigabytes : 
+      wwn : 
+      rotational : False
     interfaces:
       - name: eno8303   # Physical interface used for all networking
         macAddress: AA:BB:CC:DD:EE:04 # Unique hardware identifier for the node, used for network configuration and host identification.
@@ -441,6 +469,13 @@ hosts:
   # ================================
   - hostname: CTCLRDAZ01HI002
     role: infra
+    rootDeviceHints:
+      deviceName: /dev/sda
+      serialNumber : 
+      vendor: Dell
+      minSizeGigabytes : 
+      wwn : 
+      rotational : False
     interfaces:
       - name: eno8303   # Physical interface used for all networking
         macAddress: AA:BB:CC:DD:EE:05 # Unique hardware identifier for the node, used for network configuration and host identification.
@@ -544,6 +579,13 @@ hosts:
   # ================================
   - hostname: CTCLRDAZ01HI003
     role: infra
+    rootDeviceHints:
+      deviceName: /dev/sda
+      serialNumber : 
+      vendor: Dell
+      minSizeGigabytes : 
+      wwn : 
+      rotational : False
     interfaces:
       - name: eno8303   # Physical interface used for all networking
         macAddress: AA:BB:CC:DD:EE:06 # Unique hardware identifier for the node, used for network configuration and host identification.
