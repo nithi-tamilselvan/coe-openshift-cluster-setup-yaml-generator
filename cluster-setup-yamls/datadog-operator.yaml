@@ -1,0 +1,51 @@
+# 1️⃣ Namespace
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: datadog
+---
+# 2️⃣ OperatorGroup
+apiVersion: operators.coreos.com/v1
+kind: OperatorGroup
+metadata:
+  name: datadog-operatorgroup
+  namespace: datadog
+spec: {}
+---
+# 3️⃣ Subscription (RHEL9 Operator)
+apiVersion: operators.coreos.com/v1alpha1
+kind: Subscription
+metadata:
+  name: datadog-operator-certified
+  namespace: datadog
+spec:
+  channel: stable
+  name: datadog-operator-certified
+  source: certified-operators
+  sourceNamespace: openshift-marketplace
+  installPlanApproval: Automatic
+  startingCSV: datadog-operator.v1.23.1
+---
+# Configure Log Forwarding to Splunk (Optional)
+#
+# apiVersion: observability.openshift.io/v1
+# kind: ClusterLogForwarder
+# metadata:
+#   name: logging
+#   namespace: openshift-logging
+# spec:
+#   outputs:
+#     - name: splunk-output
+#       type: splunk
+#       endpoint: https://<splunk-hec-endpoint>:8088
+#       secret:
+#         name: splunk-hec-secret
+#   pipelines:
+#     - name: all-logs   
+#       inputRefs:
+#         - application
+#         - infrastructure
+#         - audit
+#       outputRefs:
+#         - splunk-output
+#   serviceAccountName: cluster-logging 
