@@ -1,0 +1,52 @@
+# 1️⃣ Namespace
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: openshift-logging
+---
+# 2️⃣ OperatorGroup
+apiVersion: operators.coreos.com/v1
+kind: OperatorGroup
+metadata:
+  name: cluster-logging-operatorgroup
+  namespace: openshift-logging
+spec:
+  targetNamespaces:
+    - openshift-logging
+---
+# 3️⃣ Subscription (RHEL9 Operator)
+apiVersion: operators.coreos.com/v1alpha1
+kind: Subscription
+metadata:
+  name: cluster-logging-rhel9
+  namespace: openshift-logging
+spec:
+  channel: stable-6.4
+  name: cluster-logging
+  source: redhat-operators
+  sourceNamespace: openshift-marketplace
+  installPlanApproval: Automatic
+---
+# Configure Log Forwarding to Splunk (Optional)
+#
+# apiVersion: observability.openshift.io/v1
+# kind: ClusterLogForwarder
+# metadata:
+#   name: logging
+#   namespace: openshift-logging
+# spec:
+#   outputs:
+#     - name: splunk-output
+#       type: splunk
+#       endpoint: https://<splunk-hec-endpoint>:8088
+#       secret:
+#         name: splunk-hec-secret
+#   pipelines:
+#     - name: all-logs   
+#       inputRefs:
+#         - application
+#         - infrastructure
+#         - audit
+#       outputRefs:
+#         - splunk-output
+#   serviceAccountName: cluster-logging 
